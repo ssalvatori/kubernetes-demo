@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: demo-lb-httpd
+spec:
+  selector:
+    app: pod-demo-httpd
+    type: front-end
+  ports:
+  - protocol: TCP
+    port: 8082
+    targetPort: 80
+  type: LoadBalancer

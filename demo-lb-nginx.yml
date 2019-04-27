@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: demo-lb-nginx
+spec:
+  selector:
+    app: pod-demo-nginx
+    type: front-end
+  ports:
+  - protocol: TCP
+    port: 8081
+    targetPort: 80
+  type: LoadBalancer
