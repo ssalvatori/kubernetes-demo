@@ -7,6 +7,8 @@ This simple demo contains several kubernetes defintions files to create pod, ser
 ### Pod
 * nginx
 * httpd
+* tomcat
+
 ### Services
 One per pod
 
@@ -14,6 +16,8 @@ One per pod
 One per pod
 
 ### Ingress
-One with different routes for each pod
+/nginx -> to nginx service
+/httpd -> to httpd service
+* -> to tomcat service
 
 ### Deployment

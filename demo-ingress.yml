@@ -2,21 +2,20 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: demo-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
 spec:
   backend:
-    serviceName: other
-    servicePort: 8080
+    serviceName: demo-service-tomcat
+    servicePort: 8081
   rules:
-  - host: foo.mydomain.com
-    http:
+  - http:
       paths:
-      - backend:
-          serviceName: foo
-          servicePort: 8080
-  - host: mydomain.com
-    http:
-      paths:
-      - path: /bar/*
+      - path: /nginx
         backend:
-          serviceName: bar
+          serviceName: demo-service-nginx
+          servicePort: 8080
+      - path: /httpd
+        backend:
+          serviceName: demo-service-httpd
           servicePort: 8080

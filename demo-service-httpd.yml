@@ -10,3 +10,4 @@ spec:
   ports:
   - port: 8080 ## service 
     targetPort: 80 ## pod
+    protocol: TCP

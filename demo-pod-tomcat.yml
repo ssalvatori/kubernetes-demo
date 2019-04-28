@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-demo-tomcat
+  labels:
+    app: pod-demo-tomcat
+    type: backend
+spec:
+  containers:
+  - name: tomcat
+    image:  tomcat:9-jre11
